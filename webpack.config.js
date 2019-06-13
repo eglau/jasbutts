@@ -1,26 +1,46 @@
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const moduleConfig = {
-  rules: [
-    {
-      test: /\.jsx$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    },
-    {
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader']
-    },
-    {
-      test: /\.handlebars$/,
-      loader: 'handlebars-loader'
-    },
-    {
-      test: /\.(jpg|jpeg|gif|png)$/,
-      loader: 'file-loader'
-    }
-  ]
+const moduleConfig = (isClientSide) => {
+  let rules = [];
+
+  // JSX
+  rules.push({
+    test: /\.jsx$/,
+    exclude: /node_modules/,
+    loader: 'babel-loader'
+  });
+
+  // CSS
+  let cssRules = {
+    test: /\.scss$/,
+    use: [
+      'css-loader',
+      'sass-loader'
+    ]
+  };
+  if (isClientSide) {
+    cssRules.use.unshift({
+      loader: MiniCssExtractPlugin.loader
+    });
+  }
+  rules.push(cssRules);
+
+  // Handlebars
+  rules.push({
+    test: /\.handlebars$/,
+    loader: 'handlebars-loader'
+  });
+
+  // Static assets
+  rules.push({
+    test: /\.(jpg|jpeg|gif|png)$/,
+    loader: 'file-loader'
+  });
+
+  return { rules };
 };
 
 const resolveConfig = {
@@ -36,11 +56,18 @@ module.exports = () => {
     {
       entry: path.resolve(__dirname, 'src/client.jsx'),
       output: {
-        filename: 'client.js',
+        filename: 'js/client.js',
         path: path.resolve(__dirname, 'dist/public')
       },
-      module: moduleConfig,
-      plugins: [],
+      module: moduleConfig(true),
+      plugins: [
+        new ManifestPlugin({
+          publicPath: '/'
+        }),
+        new MiniCssExtractPlugin({
+          filename: 'css/style.css'
+        })
+      ],
       resolve: resolveConfig
     },
     {
@@ -49,7 +76,7 @@ module.exports = () => {
         filename: 'server.js',
         path: path.resolve(__dirname, 'dist')
       },
-      module: moduleConfig,
+      module: moduleConfig(),
       plugins: [
         //new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 })
       ],
