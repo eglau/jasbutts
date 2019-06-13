@@ -2,11 +2,6 @@ const express = require('express');
 const app = express();
 
 const server = require('./dist/server');
-console.log(server);
-
-// app.get('*', (req, res) => {
-//   res.send('hello, world!');
-// });
 
 app.get('*', server.render());
 
