@@ -1,6 +1,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import template from './index.handlebars';
 import App from './App.jsx';
@@ -14,6 +15,7 @@ exports.render = (manifest) => {
         <App />
       </StaticRouter>
     );
+    const helmet = Helmet.renderStatic();
     
     // Generate assets from manifest
     let assets = { css: [], js: [] };
@@ -29,7 +31,7 @@ exports.render = (manifest) => {
 
     // Serve the server-rendered page
     res.status(context.status || 200);
-    res.send(template({ content: pageHtml, assets }));
+    res.send(template({ content: pageHtml, assets, helmet }));
     res.end();
   };
 }

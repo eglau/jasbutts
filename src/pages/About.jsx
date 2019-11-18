@@ -1,11 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
+import Page from 'Components/Page.jsx';
 import Link from 'Components/Link.jsx';
 
 export default class About extends React.PureComponent {
   render() {
     return (
-      <div className="About">
+      <Page title="About Me" id="About">
         <h1>About</h1>
         <p>img</p>
         <p>Hello, my name is <strong>Jasmine Ho</strong>!</p>
@@ -19,7 +21,7 @@ export default class About extends React.PureComponent {
           <li><Link to="https://www.linkedin.com/in/jasminehoart"></Link>LinkedIn</li>
           <li><Link to=""></Link>Resume</li>
         </ul>
-      </div>
+      </Page>
     );
   }
 }
