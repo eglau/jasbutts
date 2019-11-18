@@ -2,6 +2,7 @@ const path = require('path');
 // const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const moduleConfig = (isClientSide) => {
   let rules = [];
@@ -69,7 +70,13 @@ module.exports = () => {
         }),
         new MiniCssExtractPlugin({
           filename: 'css/style.css'
-        })
+        }),
+        new CopyPlugin([
+          {
+            from: path.resolve(__dirname, 'src/images'),
+            to: path.resolve(__dirname, 'dist/public/images')
+          }
+        ])
       ],
       resolve: resolveConfig
     },

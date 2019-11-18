@@ -7,7 +7,7 @@ import './Image.scss';
 class Image extends React.Component {
   static get propTypes() {
     return {
-      src: PropTypes.string,
+      src: PropTypes.string.isRequired,
       style: PropTypes.object
     };
   }
@@ -19,15 +19,10 @@ class Image extends React.Component {
   }
 
   render() {
-    // return (
-    //   <LazyLoad>
-    //     <img src={this.props.src} />
-    //   </LazyLoad>
-    // );
     return (
-      <div className="img">
+      <LazyLoad>
         <img src={this.props.src} {...this.props.style} />
-      </div>
+      </LazyLoad>
     );
   }
 }
