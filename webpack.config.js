@@ -10,7 +10,10 @@ const moduleConfig = (isClientSide) => {
   rules.push({
     test: /\.jsx$/,
     exclude: /node_modules/,
-    loader: 'babel-loader'
+    loader: 'babel-loader',
+    options: {
+      configFile: path.resolve(__dirname, 'babel.config.js')
+    }
   });
 
   // CSS

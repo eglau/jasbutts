@@ -1,9 +1,13 @@
 import React from 'react';
 
+import './Homepage.scss';
+
 class Homepage extends React.PureComponent {
   render() {
     return (
-      <h1>this is the homepage</h1>
+      <div className="Homepage">
+        <h1>this is the homepage</h1>
+      </div>
     );
   }
 }

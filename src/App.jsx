@@ -3,7 +3,7 @@ import React from 'react';
 import Routes from './Routes.jsx';
 import Sidebar from 'Components/Sidebar.jsx';
 
-import './style.scss';
+import './styles/style.scss';
 
 class App extends React.PureComponent {
   render() {
