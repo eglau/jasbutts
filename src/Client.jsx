@@ -10,4 +10,8 @@ const app = (
   </BrowserRouter>
 );
 
-hydrate(app, document.getElementById('application'));
+console.time('hydrate');
+window.onload = () => {
+  hydrate(app, document.getElementById('application'));
+  console.timeEnd('hydrate');
+};

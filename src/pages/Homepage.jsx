@@ -7,6 +7,8 @@ class Homepage extends React.PureComponent {
     return (
       <div className="Homepage">
         <h1>this is the homepage</h1>
+        <h2>this is the homepage</h2>
+        <p>this is the homepage</p>
       </div>
     );
   }

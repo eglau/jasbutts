@@ -21,7 +21,7 @@ exports.render = (manifest) => {
       if (/\.css$/.test(asset)) {
         assets.css.push(`<link rel="stylesheet" href="${asset}" />`);
       } else if (/\.js$/.test(asset)) {
-        assets.js.push(`<script async src="${asset}" />`);
+        assets.js.push(`<script async src="${asset}"></script>`);
       }
     });
     assets.css = assets.css.join('');

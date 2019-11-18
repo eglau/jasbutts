@@ -1,2 +1,63 @@
 @import './reset.scss';
 
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #4c4c4c;
+}
+
+h1, h2, p {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#application {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 2em;
+
+  display: flex;
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+
+    #content {
+      flex-basis: 80%;
+    }
+  }
+
+  @media screen and (max-width: 899px) {
+    flex-direction: column;
+  }
+}
