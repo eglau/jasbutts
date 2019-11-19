@@ -2,7 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Routes from './Routes.jsx';
-import Navbar from 'Components/Navbar.jsx';
+import LeftNav from 'Components/LeftNav.jsx';
+import TopNav from 'Components/TopNav.jsx';
 
 import './styles/style.scss';
 
@@ -14,7 +15,8 @@ class App extends React.PureComponent {
           <title>jasbutts</title>
           <meta name="description" content="test on react-helmet" />
         </Helmet>
-        <Navbar />
+        <TopNav />
+        <LeftNav />
         <div id="content">
           <Routes />
         </div>
