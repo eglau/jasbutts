@@ -1,21 +1,10 @@
 import React from 'react';
 import Page from 'Components/Page.jsx';
 
-import Image from 'Components/Image.jsx';
-import Modal from 'Components/Modal.jsx';
+import ImageGallery from 'Components/ImageGallery.jsx';
+import ImageModal from 'Components/ImageModal.jsx';
 
 import IllustrationsConfig from './Illustrations.json';
-import './Illustrations.scss';
-
-class PictureBox extends React.Component {
-  render() {
-    return (
-      <div className="IllustrationsGrid-Box" onClick={this.props.onClick}>
-        <Image src={this.props.thumb} />
-      </div>
-    );
-  }
-}
 
 export default class Illustrations extends React.Component {
   constructor(props) {
@@ -48,17 +37,10 @@ export default class Illustrations extends React.Component {
     return (
       <Page title="Illustrations" id="Illustrations">
         <h1 className="PageTitle">Illustrations</h1>
-        <div className="IllustrationsGrid">
-          {IllustrationsConfig.map((pic, i) => {
-            return <PictureBox key={i} thumb={pic.thumb} onClick={() => this.showModal(pic.image)} />;
-          })}
-        </div>
+        <ImageGallery images={IllustrationsConfig} onClick={this.showModal} />
+
         {this.state.isModalVisible && (
-          <Modal onClose={this.hideModal}>
-            <div className="IllustrationsModalImage">
-              <Image src={this.state.modalImage} style={{ width: "100%" }} />
-            </div>
-          </Modal>
+          <ImageModal onClose={this.hideModal} image={this.state.modalImage} />
         )}
       </Page>
     )

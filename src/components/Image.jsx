@@ -8,17 +8,16 @@ class Image extends React.Component {
   static get propTypes() {
     return {
       src: PropTypes.string.isRequired,
-      style: PropTypes.object
-    };
-  }
-
-  static get defaultProps() {
-    return {
-      style: {}
+      lazy: PropTypes.bool
     };
   }
 
   render() {
+    if (this.props.lazy === false) {
+      return (
+        <img src={this.props.src} {...this.props.style} />
+      );
+    }
     return (
       <LazyLoad>
         <img src={this.props.src} {...this.props.style} />

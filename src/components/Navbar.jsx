@@ -45,7 +45,7 @@ class Navbar extends React.PureComponent {
       <div className="Navbar">
         <Link to="/">
           <div className="logo">
-            <Image src={Logo} />
+            <Image src={Logo} lazy={false} />
           </div>
         </Link>
         <ul>
