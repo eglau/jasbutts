@@ -10,9 +10,15 @@ export default class Page extends React.Component {
     };
   }
 
+  static get defaultProps() {
+    return {
+      useCustomTitle: false
+    };
+  }
+
   render() {
     return (
-      <div id={this.props.id}>
+      <div id={`Page-${this.props.id}`}>
         <Helmet>
           <title>{this.props.title} | Jasmine Ho | Jasbutts</title>
         </Helmet>

@@ -1,9 +1,10 @@
-#Illustrations {
+#Page-Illustrations {
   .IllustrationsGrid {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 1em;
 
     &-Box {
       cursor: pointer;

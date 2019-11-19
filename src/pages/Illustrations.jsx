@@ -47,7 +47,7 @@ export default class Illustrations extends React.Component {
   render() {
     return (
       <Page title="Illustrations" id="Illustrations">
-        <h1>Illustrations</h1>
+        <h1 className="PageTitle">Illustrations</h1>
         <div className="IllustrationsGrid">
           {IllustrationsConfig.map((pic, i) => {
             return <PictureBox key={i} thumb={pic.thumb} onClick={() => this.showModal(pic.image)} />;

@@ -8,7 +8,7 @@ export default class About extends React.PureComponent {
   render() {
     return (
       <Page title="About Me" id="About">
-        <h1>About</h1>
+        <h1 className="PageTitle">About</h1>
         <p>img</p>
         <p>Hello, my name is <strong>Jasmine Ho</strong>!</p>
         <p>I graduated in the spring of 2015 from San Jose State University's Animation/Illustration program, currently based in Los Angeles.</p>
