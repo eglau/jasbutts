@@ -4,31 +4,29 @@
   font-size: 1.1rem;
   transition: 0.1s;
 
+  @media screen and (min-width: 900) {
+    &:hover {
+      cursor: pointer;
+      background-color: #ccc;
+      color: #4c4c4c;
+    }
+
+    &.Accordion-visible {
+      background-color: #ccc;
+      color: #4c4c4c;
+    }
+
+    &.SubNavLink {
+      background-color: #ddd;
+      color: #4c4c4c;
+    }
+
+    &.SubNavLink:hover {
+      color: #9e9e9e;
+    }
+  }
+
   @media screen and (max-width: 899px) {
-    font-size: 1.5rem;
-  }
-
-  @media screen and (max-width: 699px) {
-    font-size: 1.2rem;
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: #ccc;
-    color: #4c4c4c;
-  }
-
-  &.Accordion-visible {
-    background-color: #ccc;
-    color: #4c4c4c;
-  }
-
-  &.SubNavLink {
-    background-color: #ddd;
-    color: #4c4c4c;
-  }
-
-  &.SubNavLink:hover {
-    color: #9e9e9e;
+    font-size: 2rem;
   }
 }
