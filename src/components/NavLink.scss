@@ -4,7 +4,7 @@
   font-size: 1.1rem;
   transition: 0.1s;
 
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 769px) {
     &:hover {
       cursor: pointer;
       background-color: #ccc;
@@ -26,7 +26,7 @@
     }
   }
 
-  @media screen and (max-width: 899px) {
+  @media screen and (max-width: 768px) {
     font-size: 2rem;
   }
 }

@@ -1,5 +1,5 @@
 .LeftNav {
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 769px) {
     flex-basis: 20%;
 
     display: flex;
@@ -18,9 +18,10 @@
     }
   }
 
-  @media screen and (max-width: 899px) {
+  @media screen and (max-width: 768px) {
     position: absolute;
     z-index: 2;
+    max-width: 300px;
     width: 66%;
     height: 100%;
     padding: 1rem;

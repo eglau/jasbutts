@@ -10,27 +10,25 @@ export default class LeftNavAccordion extends React.PureComponent {
       title: PropTypes.string.isRequired
     };
   }
-
-  constructor(props) {
-    super(props);
-    this.state = {
+  
+  state = {
       isCollapsed: true
-    };
+  };
 
-    this.expandAccordion = this.expandAccordion.bind(this);
-    this.collapseAccordion = this.collapseAccordion.bind(this);
+  expandAccordion = () => {
+    if (window && window.innerWidth > 768) {
+      this.setState({
+        isCollapsed: false
+      });
+    }
   }
 
-  expandAccordion() {
-    this.setState({
-      isCollapsed: false
-    });
-  }
-
-  collapseAccordion() {
-    this.setState({
-      isCollapsed: true
-    });
+  collapseAccordion = () => {
+    if (window && window.innerWidth > 768) {
+      this.setState({
+        isCollapsed: true
+      });
+    }
   }
 
   render() {

@@ -6,14 +6,15 @@ import Image from './Image.jsx';
 import LeftNavAccordion from './LeftNavAccordion.jsx';
 import Link from './Link.jsx';
 import NavLink from './NavLink.jsx';
+import { withNavigation } from './NavigationProvider.jsx';
 
 import './LeftNav.scss';
 
-export default class LeftNav extends React.Component {
+class LeftNav extends React.Component {
   static get propTypes() {
     return {
       isVisible: PropTypes.bool,
-      onClose: PropTypes.func
+      onNavigationSelect: PropTypes.func
     }
   };
 
@@ -23,7 +24,14 @@ export default class LeftNav extends React.Component {
     };
   }
 
+  handleOutsideClick = () => {
+    if (this.props.onNavigationSelect) {
+      this.props.onNavigationSelect();
+    }
+  }
+
   render() {
+    console.warn('@@@ context', this.context);
     const leftnavClasses = classNames(
       'LeftNav',
       this.props.isVisible ? 'LeftNav-visible' : 'LeftNav-hidden'
@@ -51,9 +59,11 @@ export default class LeftNav extends React.Component {
           </ul>
         </div>
         { this.props.isVisible &&
-          <div className="LeftNav-MobileShadow" onClick={this.props.onClose} />
+          <div className="LeftNav-MobileShadow" onClick={this.handleOutsideClick} />
         }
       </React.Fragment>
     );
   }
 }
+
+export default withNavigation(LeftNav);

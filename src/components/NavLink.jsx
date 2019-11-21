@@ -1,37 +1,42 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Link from './Link.jsx';
+import { withNavigation } from './NavigationProvider.jsx';
 
 import './NavLink.scss';
 
-export default class NavLink extends React.PureComponent {
+class NavLink extends React.PureComponent {
+  static get propTypes() {
+    return {
+      to: PropTypes.string.isRequired
+    };
+  }
+
+  handleNavigationSelect = () => {
+    if (this.props.onNavigationSelect) {
+      this.props.onNavigationSelect();
+    }
+  }
+
   render() {
     const classes = classNames(
       'NavLink',
-      !this.props.to && !this.props.onClick && 'NavTop',
       this.props.className
     );
 
-    let link;
     if (this.props.to) {
-      link = (
+      return (
         <Link to={this.props.to}>
-          <div className={classes}>
+          <div className={classes} onClick={this.handleNavigationSelect}>
             <span>{this.props.text}</span>
           </div>
         </Link>
       );
-    } else if (this.props.onClick) {
-      link = (
-        <div className={classes} onClick={this.props.onClick}>
-          <span>{this.props.text}</span>
-        </div>
-      );
-    } else {
-      throw new Error('missing prop to or onclick for navlink');
     }
-
-    return <li>{link}</li>;
+    return 
   }
 }
+
+export default withNavigation(NavLink);
