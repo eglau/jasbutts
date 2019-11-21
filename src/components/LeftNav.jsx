@@ -36,12 +36,16 @@ class LeftNav extends React.Component {
       this.props.isVisible ? 'LeftNav-visible' : 'LeftNav-hidden'
     )
     return (
-      <React.Fragment>
+      <div className="LeftNav-Wrapper">
         <div className={leftnavClasses}>
-          <div className="LeftNav-Logo">
+          <h1 className="LeftNav-Spacer">&#160;</h1>
+          <div className="LeftNav-Logo" onClick={this.handleOutsideClick}>
             <Link to="/">
                 <Image src="/images/sidebar.jpg" lazy={false} />
             </Link>
+          </div>
+          <div className="LeftNav-Name">
+            <span>Jasmine Ho</span>
           </div>
           <ul>
             <NavLink text="Illustrations" to="/illustrations" />
@@ -59,7 +63,7 @@ class LeftNav extends React.Component {
         { this.props.isVisible &&
           <div className="LeftNav-MobileShadow" onClick={this.handleOutsideClick} />
         }
-      </React.Fragment>
+      </div>
     );
   }
 }

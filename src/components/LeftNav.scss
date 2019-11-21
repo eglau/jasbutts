@@ -1,6 +1,18 @@
+.LeftNav-Wrapper {
+  width: 180px;
+}
+
 .LeftNav {
+
+  &-Name {
+    font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
   @media screen and (min-width: 769px) {
-    flex-basis: 20%;
+    position: fixed;
 
     display: flex;
     flex-direction: column;
@@ -19,10 +31,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    position: absolute;
+    position: fixed;
     z-index: 2;
-    max-width: 300px;
-    width: 66%;
     height: 100%;
     padding: 1rem;
     background-color: #5d5d5d;
@@ -39,6 +49,10 @@
       left: 0;
 
       transition: left 0.3s ease-out;
+    }
+
+    &-Spacer {
+      display: none;
     }
 
     &-Logo {

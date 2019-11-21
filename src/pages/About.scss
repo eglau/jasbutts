@@ -1,0 +1,51 @@
+#Page-About {
+  .About {
+    display: flex;
+    flex-direction: row;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      padding-bottom: 1rem;
+    }
+
+    &-Image {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      @media screen and (min-width: 769px) {
+        flex-basis: 33%;
+        margin-right: 2rem;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-Text {
+      @media screen and (min-width: 769px) {
+        flex-basis: 66%;
+      }
+
+      @media screen and (max-width: 576px) {
+        font-size: 0.9rem;
+      }
+    }
+
+    &-Contact {
+      list-style: disc;
+      margin-left: 1em;
+      
+      a {
+        color: #9999ff;
+      }
+
+      a:hover {
+        color: #cdcdff;
+      }
+    }
+  }
+}

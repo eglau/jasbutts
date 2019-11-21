@@ -40,7 +40,12 @@
       align-items: center;
 
       &-Text {
-        font-size: 3rem;
+        @media screen and (max-width: 768px) {
+          font-size: 2rem;
+        }
+        @media screen and (max-width: 576px) {
+          font-size: 1.4rem;
+        }
       }
     }
   }
