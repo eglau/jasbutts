@@ -12,6 +12,7 @@
     background-color: #3c3c3c;
     width: 100%;
     height: calc(70px + 2rem);
+    box-shadow: 0 0 5px black;
 
     display: flex;
     flex-direction: row;
@@ -39,7 +40,7 @@
       align-items: center;
 
       &-Text {
-        font-size: 2rem;
+        font-size: 3rem;
       }
     }
   }
