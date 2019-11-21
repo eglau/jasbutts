@@ -4,9 +4,9 @@ import Page from 'Components/Page.jsx';
 import ImageGallery from 'Components/ImageGallery.jsx';
 import ImageModal from 'Components/ImageModal.jsx';
 
-import IllustrationsConfig from './Illustrations.json';
+import PersonalConfig from './Personal.json';
 
-export default class Illustrations extends React.Component {
+export default class Personal extends React.Component {
   state = {
     modalImage: null,
     isModalVisible: false
@@ -28,9 +28,9 @@ export default class Illustrations extends React.Component {
 
   render() {
     return (
-      <Page title="Illustrations" id="Illustrations">
-        <h1 className="PageTitle">Illustrations</h1>
-        <ImageGallery images={IllustrationsConfig} onClick={this.showModal} />
+      <Page title="Personal" id="Personal">
+        <h1 className="PageTitle">Personal</h1>
+        <ImageGallery images={PersonalConfig} onClick={this.showModal} />
 
         {this.state.isModalVisible && (
           <ImageModal onClose={this.hideModal} image={this.state.modalImage} />

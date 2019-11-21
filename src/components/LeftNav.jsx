@@ -46,15 +46,14 @@ class LeftNav extends React.Component {
           </div>
           <ul>
             <NavLink text="Illustrations" to="/illustrations" />
+            <NavLink text="Personal" to="/personal" />
             <LeftNavAccordion title="Projects">
               <NavLink text="Tip of the Hats" to="/tbd" />
               <NavLink text="Esports and LANs" to="/tbd" />
             </LeftNavAccordion>
             
-            <LeftNavAccordion title="Photography">
-              <NavLink text="Tip of the Hats" to="/tbd" />
-              <NavLink text="Esports and LANs" to="/tbd" />
-            </LeftNavAccordion>
+            <NavLink text="Photography" to="photography" />
+            <NavLink text="Storyboarding" to="/storyboarding" />
             <NavLink text="About" to="/about" />
           </ul>
         </div>
