@@ -31,7 +31,6 @@ class LeftNav extends React.Component {
   }
 
   render() {
-    console.warn('@@@ context', this.context);
     const leftnavClasses = classNames(
       'LeftNav',
       this.props.isVisible ? 'LeftNav-visible' : 'LeftNav-hidden'
