@@ -1,0 +1,23 @@
+#Page-Storyboarding {
+  .SlideShareIframe {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3em;
+
+    &-iframe {
+      width: 100%;
+      height: 485px;
+      margin-bottom: 12px;
+    }
+
+    &-title {
+      color: #5ab2ff;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
