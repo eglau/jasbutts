@@ -1,9 +1,11 @@
+@import '../styles/variables.scss';
+
 #Page-About {
   .About {
     display: flex;
     flex-direction: row;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $widthTablet) {
       flex-direction: column;
       padding-bottom: 1rem;
     }
@@ -14,23 +16,23 @@
         max-height: 100%;
       }
 
-      @media screen and (min-width: 769px) {
+      @media screen and (min-width: $widthDesktop) {
         flex-basis: 33%;
         margin-right: 2rem;
       }
 
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: $widthTablet) {
         width: 100%;
         margin-bottom: 1rem;
       }
     }
 
     &-Text {
-      @media screen and (min-width: 769px) {
+      @media screen and (min-width: $widthDesktop) {
         flex-basis: 66%;
       }
 
-      @media screen and (max-width: 576px) {
+      @media screen and (max-width: $widthMobile) {
         font-size: 0.9rem;
       }
     }
@@ -40,11 +42,11 @@
       margin-left: 1em;
       
       a {
-        color: #9999ff;
-      }
+        color: $colorLink;
 
-      a:hover {
-        color: #cdcdff;
+        &:hover {
+          color: $colorLinkHover;
+        }
       }
     }
   }

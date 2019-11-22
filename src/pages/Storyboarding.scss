@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 #Page-Storyboarding {
   .SlideShareIframe {
     width: 100%;
@@ -13,10 +15,10 @@
     }
 
     &-title {
-      color: #5ab2ff;
+      color: $colorLink;
 
       &:hover {
-        color: #ffffff;
+        color: $colorLinkHover;
       }
     }
   }
