@@ -1,13 +1,13 @@
 .LeftNavAccordion {
   &-Submenu {
     max-height: 0px;
-    transition: max-height 0.5s ease-out;
+    transition: max-height 0.35s ease-out;
     overflow: hidden;
   
     &.menu-visible {
       visibility: visible;
       max-height: 500px;
-      transition: max-height 0.75s ease-in;
+      transition: max-height 0.75s ease-in 0.1s;
     }
   }
 }
